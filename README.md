@@ -7,4 +7,4 @@ Link:
 
 ## Images:
 WorkDay Scheduler
-<img src="assets/Screen Shot 2023-02-09 at 10.32.42.png"> alt="Workday Scheduler" title="Time and Blocks">
+<img src="assets/Screen Shot 2023-02-09 at 10.32.42.png" alt="Workday Scheduler" title="Time and Blocks">
