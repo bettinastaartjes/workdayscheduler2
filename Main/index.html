@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/Main/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,10 +26,11 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!--the current date goes here-->
       <p id="currentDay" class="lead"></p>
     </header>
       <!--The text notification that tells you the appointment has been added to local storage with checkmark-->
-      <section class='text-center notification' id="notify"></section>Appointment Added to<code>localStorage</code>✔️</section>
+      <section class='text-center notification' id="notify">Appointment Added to<code>localStorage</code>✔️</section>
       <div class="container">
         <!-- Timeblocks go here -->
         <div id="hour9" class="row time-block">
@@ -100,5 +101,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--add in the js file here after the above-->
+    <script src="/Main/script.js"></script>
   </body>
 </html>

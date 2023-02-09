@@ -3,18 +3,13 @@ $(document).ready(function() {
     //these are what saves the save button clicks
     $('.saveBtn').on('click', function () {
         // these are the values for that to save
-        var text = $(this).siblings('.description')
+        var value = $(this).siblings('.description')
         .val();
         var time = $(this).parent().attr('id');
         // then save it in the local storage
-        localStorage.setItem(time,text);
+        localStorage.setItem(value, time);
         // and show that the item was saved like this
         $('.notification').addClass('show');
-
-        /*timeout to remove 'show' class after 5 seconds
-    setTimeout(function() {
-        $('.notification').removeClass('show');
-      }, 5000);*/
 
     });
 
@@ -22,20 +17,20 @@ $(document).ready(function() {
         // get current number of hours
         var currentHour = moment().hours();
 
-        // loop over time blocks; the split - means...
-    $('.time-block').each(function() {
-        var blockHour = parseInt($(this).attr('id').split('-')[1]);
+        // loop over time blocks; the split (put HOUR!)
+        $('.time-block').each(function() {
+            var blockHour = parseInt($(this).attr('id').split('hour')[1]);
   
         // to check the time and add classes for the colored backgrounds (red past, green future)
         if (blockHour < currentHour) {
-          $(this).addClass("past");
+          $(this).addClass('past');
         } else if (blockHour === currentHour) {
-          $(this).removeClass("past");
-          $(this).addClass("present");
+          $(this).removeClass('past');
+          $(this).addClass('present');
         } else {
-          $(this).removeClass("past");
-          $(this).removeClass("present");
-          $(this).addClass("future");
+          $(this).removeClass('past');
+          $(this).removeClass('present');
+          $(this).addClass('future');
         }
       });
     }
@@ -45,8 +40,8 @@ $(document).ready(function() {
     // set up interval to check if current time needs to be updated
     var interval = setInterval(hourUpdater, 15000);
   
-    // load any saved data from localStorage
-    $("#hour9 .description").val(localStorage.getItem("hour9"));
+    // load saved data from localStorage
+    $('#hour9 .description').val(localStorage.getItem('hour9'));
     $('#hour10 .description').val(localStorage.getItem('hour10'));
     $('#hour11 .description').val(localStorage.getItem('hour11'));
     $('#hour12 .description').val(localStorage.getItem('hour12'));
