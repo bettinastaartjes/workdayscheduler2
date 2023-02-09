@@ -1,0 +1,24 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/*clas value*/
+.jumbotron {
+    text-align: center;
+    color: beige;
+    border-bottom: 10px solid beige;
+}
+
+/* the box where you can add in the description*/
+textarea{
+    background: transparent;
+    color:beige;
+    padding: 10px;
+}
+
+/*clas value*/
+.description {
+    white-space: pre-wrap;
+}
