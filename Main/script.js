@@ -22,24 +22,20 @@ $(document).ready(function() {
         // get current number of hours
         var currentHour = moment().hours();
 
-        // loop over time blocks
+        // loop over time blocks; the split - means...
     $('.time-block').each(function() {
-        var blockHour = parseInt(
-          $(this)
-            .attr('id')
-            .split('-')[1]
-        );
+        var blockHour = parseInt($(this).attr('id').split('-')[1]);
   
-        // check if we've moved past this time
+        // to check the time and add classes for the colored backgrounds (red past, green future)
         if (blockHour < currentHour) {
-          $(this).addClass('past');
+          $(this).addClass("past");
         } else if (blockHour === currentHour) {
-          $(this).removeClass('past');
-          $(this).addClass('present');
+          $(this).removeClass("past");
+          $(this).addClass("present");
         } else {
-          $(this).removeClass('past');
-          $(this).removeClass('present');
-          $(this).addClass('future');
+          $(this).removeClass("past");
+          $(this).removeClass("present");
+          $(this).addClass("future");
         }
       });
     }
@@ -50,15 +46,15 @@ $(document).ready(function() {
     var interval = setInterval(hourUpdater, 15000);
   
     // load any saved data from localStorage
-    $('#hour-9 .description').val(localStorage.getItem('hour-9'));
-    $('#hour-10 .description').val(localStorage.getItem('hour-10'));
-    $('#hour-11 .description').val(localStorage.getItem('hour-11'));
-    $('#hour-12 .description').val(localStorage.getItem('hour-12'));
-    $('#hour-13 .description').val(localStorage.getItem('hour-13'));
-    $('#hour-14 .description').val(localStorage.getItem('hour-14'));
-    $('#hour-15 .description').val(localStorage.getItem('hour-15'));
-    $('#hour-16 .description').val(localStorage.getItem('hour-16'));
-    $('#hour-17 .description').val(localStorage.getItem('hour-17'));
+    $("#hour9 .description").val(localStorage.getItem("hour9"));
+    $('#hour10 .description').val(localStorage.getItem('hour10'));
+    $('#hour11 .description').val(localStorage.getItem('hour11'));
+    $('#hour12 .description').val(localStorage.getItem('hour12'));
+    $('#hour13 .description').val(localStorage.getItem('hour13'));
+    $('#hour14 .description').val(localStorage.getItem('hour14'));
+    $('#hour15 .description').val(localStorage.getItem('hour15'));
+    $('#hour16 .description').val(localStorage.getItem('hour16'));
+    $('#hour17 .description').val(localStorage.getItem('hour17'));
   
     // display current day on page
     $('#currentDay').text(moment().format('dddd, MMMM Do'));
